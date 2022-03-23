@@ -1,0 +1,15 @@
+#!/bin/sh
+echo "Name the file"
+read file
+echo "name the directory"
+read directory
+if [ ! -z $directory ]
+then
+cwd=`pwd`
+cd $directory
+link=`ls -l $file | tr -s "" | cut -d " " -f2`
+cd $cwd
+ else
+ link=`ls -l $file | tr -s "" | cut -d " " -f2`
+ fi
+ echo "Number of links of file $file is $link"
